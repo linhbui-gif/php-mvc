@@ -1,8 +1,9 @@
 <?php
 include ("BaseController.php");
 
+class HomeController extends BaseController {
 
-class HomeController {
+    public $view = 'home';
 
     public $model;
 
@@ -20,6 +21,7 @@ class HomeController {
     public function index()
     {
         $result = $this->model->getAll();
-        return include ("app/Views/admin/Pages/Master.php");
+        return $this->view();
     }
+
 }
